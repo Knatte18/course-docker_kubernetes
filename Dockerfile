@@ -12,4 +12,5 @@ RUN npm install
 COPY --chown=node:node ./ ./
 
 FROM nginx AS final
+EXPOSE 80
 COPY --from=builder /home/node/app/build /usr/share/nginx/html
